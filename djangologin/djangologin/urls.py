@@ -20,5 +20,5 @@ from apps.users import views as users_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^login/$', users_views.login_view)
+    url(r'^login/$', users_views.LoginView.as_view())
 ]
