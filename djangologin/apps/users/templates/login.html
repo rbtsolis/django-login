@@ -6,17 +6,23 @@
 </head>
 <body>
 
-    <h1>Django Login</h1>
-    <form method="POST">
+    {% if user.is_authenticated %}
 
-        {% csrf_token %}
+        <h1>Bienvenid@ {{ user.username }}</h1>
 
-        {{ form.as_p }}
+    {% else %}
 
-        <input type="submit" value="Login">
+        <h1>Django Login</h1>
+        <form method="POST">
 
+            {% csrf_token %}
 
-    </form>
+            {{ form.as_p }}
+            <input type="submit" value="Login">
+
+        </form>
+
+    {% endif %}
 
 </body>
 </html>
