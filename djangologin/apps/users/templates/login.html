@@ -6,10 +6,15 @@
 </head>
 <body>
 
+    <h1>Django Login</h1>
+    <form method="POST">
 
-    <form action="" method="POST">
+        {% csrf_token %}
 
-        <label for="">Django Login</label>
+        {{ form.as_p }}
+
+        <input type="submit" value="Login">
+
 
     </form>
 
