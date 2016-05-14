@@ -21,4 +21,5 @@ from apps.users import views as users_views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^login/$', users_views.LoginView.as_view()),
+    url(r'^logout/$', users_views.Logout),
 ]
