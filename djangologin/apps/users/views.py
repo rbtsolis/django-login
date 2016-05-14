@@ -1,15 +1,18 @@
-from django.shortcuts import render, redirect
-from django.contrib.auth import logout, authenticate, login
+from django.shortcuts import redirect
+from django.contrib.auth import logout
 from django.views.generic import FormView
 
-from .foms import LoginForm
+from .forms import LoginForm
 
 
 class LoginView(FormView):
 
     form_class = LoginForm
+    template_name = 'login.html'
+    success_url = '/'
 
-    return render(request, 'login.html')
+    def form_valid(self, form):
+        return super(LoginView, self).form_valid(form)
 
 
 def Logout(request):
